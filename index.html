@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nike. Just Do It. Nike.com</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --nike-black: #000000;
@@ -104,7 +106,7 @@
         .product-image img {
             max-width: 90%;
             transform: rotate(-15deg);
-            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1));
+            filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.1));
         }
 
         .product-details {
@@ -113,12 +115,42 @@
             flex-direction: column;
         }
 
-        .category { font-weight: 500; color: #111; margin-bottom: 4px; }
-        h1 { font-size: 32px; font-weight: 800; text-transform: uppercase; margin-bottom: 8px; }
-        .price { font-size: 18px; font-weight: 600; margin-bottom: 30px; display: flex; align-items: center; gap: 6px; }
+        .category {
+            font-weight: 500;
+            color: #111;
+            margin-bottom: 4px;
+        }
 
-        .section-title { font-weight: 600; margin-bottom: 15px; display: flex; justify-content: space-between; }
-        .size-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 30px; }
+        h1 {
+            font-size: 32px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .section-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .size-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
         .size-btn {
             border: 1px solid #e5e5e5;
             padding: 15px;
@@ -128,8 +160,16 @@
             font-weight: 500;
             transition: 0.2s;
         }
-        .size-btn:hover { border-color: var(--nike-black); }
-        .size-btn.active { border-color: var(--nike-black); background: #fafafa; box-shadow: inset 0 0 0 1px #000; }
+
+        .size-btn:hover {
+            border-color: var(--nike-black);
+        }
+
+        .size-btn.active {
+            border-color: var(--nike-black);
+            background: #fafafa;
+            box-shadow: inset 0 0 0 1px #000;
+        }
 
         .add-to-bag {
             background: var(--nike-black);
@@ -143,7 +183,10 @@
             margin-bottom: 12px;
             transition: opacity 0.2s;
         }
-        .add-to-bag:hover { opacity: 0.8; }
+
+        .add-to-bag:hover {
+            opacity: 0.8;
+        }
 
         .favorite {
             background: var(--nike-white);
@@ -156,13 +199,19 @@
             cursor: pointer;
             transition: 0.2s;
         }
-        .favorite:hover { border-color: #111; }
+
+        .favorite:hover {
+            border-color: #111;
+        }
 
         /* Modal / Popups */
         .modal-overlay {
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.5);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
             display: none;
             align-items: center;
             justify-content: center;
@@ -182,12 +231,30 @@
         }
 
         @keyframes slideUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
-        .oops-title { font-size: 28px; font-weight: 900; margin-bottom: 15px; color: #ff3b30; }
-        .modal-text { font-size: 16px; color: #444; line-height: 1.5; margin-bottom: 25px; }
+        .oops-title {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: #ff3b30;
+        }
+
+        .modal-text {
+            font-size: 16px;
+            color: #444;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
 
         .diamond-needed {
             background: #fff9db;
@@ -215,7 +282,7 @@
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 1px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         /* Order History (Side Sheet) */
@@ -232,7 +299,7 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             z-index: 900;
         }
 
@@ -244,37 +311,102 @@
             height: 100%;
             background: #fff;
             z-index: 1500;
-            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
             transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             padding: 30px;
         }
 
-        .history-panel.active { right: 0; }
+        .history-panel.active {
+            right: 0;
+        }
 
-        .history-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
-        .order-item { border-bottom: 1px dotted #ccc; padding: 15px 0; }
-        .order-status { font-size: 12px; padding: 4px 8px; border-radius: 4px; font-weight: 700; }
-        .status-pending { background: #fff3cd; color: #856404; }
+        .history-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .order-item {
+            border-bottom: 1px dotted #ccc;
+            padding: 15px 0;
+        }
+
+        .order-status {
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
 
         /* Loader */
-        #order-loader { display: none; margin: 20px 0; }
-        .spinner { width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid #000; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto; }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        #order-loader {
+            display: none;
+            margin: 20px 0;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #000;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
 
         @media (max-width: 768px) {
-            .container { flex-direction: column; gap: 30px; padding-top: 20px; }
-            nav { padding: 0 20px; }
-            .nav-center { display: none; }
-            .product-image { min-height: 350px; }
-            h1 { font-size: 26px; }
+            .container {
+                flex-direction: column;
+                gap: 30px;
+                padding-top: 20px;
+            }
+
+            nav {
+                padding: 0 20px;
+            }
+
+            .nav-center {
+                display: none;
+            }
+
+            .product-image {
+                min-height: 350px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <nav>
         <div class="nav-left">
-            <svg viewBox="0 0 24 24" fill="#000"><path d="M21 8.719L7.836 14.303C6.74 14.768 5.818 15 5.075 15c-.836 0-1.445-.295-1.819-.884-.485-.76-.273-1.982.559-3.272.494-.754 1.122-1.446 1.734-2.108-.144.234-1.415 2.349-.025 3.345.275.2.666.298 1.147.298.386 0 .829-.063 1.316-.19L21 8.719z"></path></svg>
+            <svg viewBox="0 0 24 24" fill="#000">
+                <path
+                    d="M21 8.719L7.836 14.303C6.74 14.768 5.818 15 5.075 15c-.836 0-1.445-.295-1.819-.884-.485-.76-.273-1.982.559-3.272.494-.754 1.122-1.446 1.734-2.108-.144.234-1.415 2.349-.025 3.345.275.2.666.298 1.147.298.386 0 .829-.063 1.316-.19L21 8.719z">
+                </path>
+            </svg>
         </div>
         <div class="nav-center">
             <a href="#">New</a>
@@ -287,16 +419,20 @@
                 <span>💎</span>
                 <span id="bal">96.0</span>
             </div>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
         </div>
     </nav>
 
     <div class="container">
         <div class="product-image">
             <!-- Simulated high-quality image of Nike Pegasus -->
-            <img src="https://images.clothes.com/b_rgb:f5f5f5,c_limit,f_auto,fl_lossy,q_auto,w_1920/2280d90d-c788-466d-8868-af5e009403df/air-zoom-pegasus-40-road-running-shoes-MC99fL.png" 
-                 onerror="this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png'; this.style.transform='none'; this.style.width='200px';"
-                 alt="Nike Pegasus 40">
+            <img src="https://images.clothes.com/b_rgb:f5f5f5,c_limit,f_auto,fl_lossy,q_auto,w_1920/2280d90d-c788-466d-8868-af5e009403df/air-zoom-pegasus-40-road-running-shoes-MC99fL.png"
+                onerror="this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png'; this.style.transform='none'; this.style.width='200px';"
+                alt="Nike Pegasus 40">
         </div>
 
         <div class="product-details">
@@ -327,7 +463,8 @@
             </div>
 
             <p style="margin-top: 30px; line-height: 1.6; color: #444;">
-                A springy ride for every run, the Peg’s familiar, just-for-you feel returns to help you accomplish your goals. This version has the same responsiveness and neutral support you love.
+                A springy ride for every run, the Peg’s familiar, just-for-you feel returns to help you accomplish your
+                goals. This version has the same responsiveness and neutral support you love.
             </p>
         </div>
     </div>
@@ -337,7 +474,8 @@
         <div class="modal">
             <div class="oops-title">OOPS! 💎</div>
             <p class="modal-text">
-                Your order for <b>Nike Pegasus 40</b> could not be completed. You are currently short on Diamonds to finalize the NO-CHARGE shipment.
+                Your order for <b>Nike Pegasus 40</b> could not be completed. You are currently short on Diamonds to
+                finalize the NO-CHARGE shipment.
             </p>
 
             <div class="diamond-needed">
@@ -355,7 +493,9 @@
 
     <!-- Order History Sidebar -->
     <div class="order-history-btn" onclick="toggleHistory()">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
     </div>
 
     <div class="history-panel" id="history">
@@ -383,14 +523,14 @@
         }
 
         function processOrder() {
-            if(!selectedSize) {
+            if (!selectedSize) {
                 alert("Please select a size first.");
                 return;
             }
 
             const btn = document.getElementById('mainAction');
             const loader = document.getElementById('order-loader');
-            
+
             btn.style.display = 'none';
             loader.style.display = 'block';
 
@@ -423,4 +563,5 @@
         }
     </script>
 </body>
+
 </html>
