@@ -338,7 +338,7 @@
         const ctaLink = "https://skrotrack.com/click/1";
         let selectedSize = "";
         const translations = {
-            'EN': {
+            'PT': {
                 'nav1': 'Novo',
                 'nav2': 'Homem',
                 'nav3': 'Mulher',
@@ -369,8 +369,8 @@
             try {
                 const response = await fetch('https://ipapi.co/json/');
                 const data = await response.json();
-                if (data.country_code === 'NG') {
-                    applyTranslation('EN');
+                if (data.country_code === 'MZ') {
+                    applyTranslation('PT');
                 }
             } catch (error) {
                 console.log('Location detection failed, defaulting to English.');
