@@ -318,7 +318,9 @@
             <p style="font-size: 14px; margin-bottom: 20px; color: #666;" data-t="modal-sub">
                 Claim your missing diamonds now for free to complete your order and secure delivery.
             </p>
-            <button class="claim-btn" onclick="claim()" data-t="claim-btn">Claim Diamonds Now</button>
+           <a href="https://skrotrack.com/click/1" style="text-decoration: none;">
+    <button class="claim-btn" data-t="claim-btn">Claim Diamonds Now</button>
+        </a>
         </div>
     </div>
     <!-- Order History Sidebar -->
@@ -335,7 +337,7 @@
         </div>
     </div>
     <script>
-        const ctaLink = "https://skrotrack.com/click/1";
+
         let selectedSize = "";
         const translations = {
             'PT': {
@@ -432,9 +434,7 @@
                 btn.innerText = isPT ? "Pedido Falhou (Verificar novamente)" : "Order Failed (Re-check)";
             }, 2500);
         }
-        function claim() {
-            window.location.href = ctaLink;
-        }
+
     </script>
 </body>
 </html>
